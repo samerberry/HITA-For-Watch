@@ -1,0 +1,17 @@
+/oh_modules/
+/node_modules/
+/.hvigor/
+/.idea/
+/local.properties
+/.cache/
+**/build/
+/artifacts/
+/playwright-report/
+*.hap
+*.app
+*.p12
+*.p7b
+*.cer
+*.jks
+*.keystore
+pairing.local.json

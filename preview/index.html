@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HITA For Watch · 交互预览</title>
+  <link rel="stylesheet" href="/entry/src/main/js/MainAbility/pages/index/index.css">
+  <link rel="stylesheet" href="/preview/preview.css">
+</head>
+<body>
+  <header class="preview-header">
+    <img src="/entry/src/main/resources/base/media/app_icon.png" alt="" width="32" height="32">
+    <h1>HITA For Watch</h1><span id="device-label">WATCH FIT 5 Pro</span>
+  </header>
+  <main class="workspace">
+    <section class="device-area" aria-label="手表预览">
+      <div class="device-shell"><div id="watch" aria-label="手表屏幕"></div></div>
+    </section>
+    <aside class="controls">
+      <h2>预览状态</h2>
+      <label class="device-label" for="device-select">设备</label>
+      <select id="device-select" aria-label="预览设备"></select>
+      <p>浏览器读取同一份 HML、CSS 和课表逻辑。通信由本地模拟，不代表真机联调结果；演示课表不会打包进应用。</p>
+      <div class="control-actions">
+        <button id="demo">同步演示课表</button>
+        <button id="empty">清空预览缓存</button>
+        <button id="interrupt">中断下一次传输</button>
+      </div>
+      <label class="file-label">导入协议 JSON <input id="snapshot-file" type="file" accept=".json,application/json"></label>
+      <p id="result" role="status">首次启动 · 未同步</p>
+      <dl>
+        <dt>演示时间</dt><dd>2026-10-05 10:15 · 周一</dd>
+        <dt>工程目标</dt><dd>liteWearable · API 23</dd>
+        <dt>数据</dt><dd>虚构课程，仅供预览</dd>
+      </dl>
+    </aside>
+  </main>
+  <script type="module" src="/preview/preview.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<div class="screen" style="width: {{layout.width}}px; height: {{layout.height}}px;" onswipe="swipeDay">
+  <div class="schedule" style="width: {{layout.width}}px; height: {{layout.height}}px;" if="{{!showSync}}">
+    <div class="top-line" style="width: {{layout.topWidth}}px; margin-top: {{layout.topInset}}px;">
+      <text class="heading" style="width: {{layout.headingWidth}}px;">{{heading}}</text>
+      <text class="week-label" style="width: {{layout.weekLabelWidth}}px;">{{weekLabel}}</text>
+      <div class="sync-icon-button" onclick="openSync">
+        <image class="sync-icon" src="/common/sync.png"></image>
+      </div>
+    </div>
+    <div class="week-strip" style="width: {{layout.weekWidth}}px;">
+      <div for="{{days}}" tid="key" class="day" style="width: {{layout.dayWidth}}px; background-color: {{$item.backgroundColor}};" onclick="selectDate($item.key)">
+        <text class="day-name" style="width: {{layout.dayWidth}}px; color: {{$item.nameColor}};">{{$item.weekday}}</text>
+        <text class="day-number" style="width: {{layout.dayWidth}}px; color: {{$item.numberColor}};">{{$item.number}}</text>
+        <div class="day-dot" style="background-color: {{$item.dotColor}};"></div>
+      </div>
+    </div>
+    <div class="day-summary" style="width: {{layout.summaryWidth}}px;">
+      <text class="summary-text" style="width: {{layout.summaryTextWidth}}px;">{{subtitle}}</text>
+      <text class="today-action" if="{{!selectedIsToday}}" onclick="goToday">今天</text>
+    </div>
+    <list class="course-list" id="courses" style="width: {{layout.width}}px; height: {{layout.listHeight}}px;">
+      <list-item for="{{events}}" tid="id" class="course-row" style="width: {{layout.width}}px; height: {{$item.titleHeight + $item.roomHeight + $item.teacherHeight + 125}}px;">
+        <div class="course" style="width: {{layout.contentWidth}}px; height: {{$item.titleHeight + $item.roomHeight + $item.teacherHeight + 115}}px; background-color: {{$item.backgroundColor}};">
+          <div class="course-top" style="width: {{layout.courseTextWidth}}px;">
+            <div class="course-dot" style="background-color: {{$item.accent}};"></div>
+            <text class="course-time" style="width: {{layout.courseTextWidth - 14}}px;">{{$item.time}}</text>
+          </div>
+          <text class="course-title" style="width: {{layout.courseTextWidth}}px; height: {{$item.titleHeight}}px;">{{$item.title}}</text>
+          <text class="course-room" style="width: {{layout.courseTextWidth}}px; height: {{$item.roomHeight}}px;">{{$item.roomLabel}}</text>
+          <text class="course-teacher" style="width: {{layout.courseTextWidth}}px; height: {{$item.teacherHeight}}px;">{{$item.teacherLabel}}</text>
+          <div class="course-bottom" style="width: {{layout.courseTextWidth}}px;">
+            <text class="course-kind" style="width: {{layout.courseKindWidth}}px;">{{$item.kindText}} {{$item.sections}}</text>
+            <text class="course-state">{{$item.state}}</text>
+          </div>
+        </div>
+      </list-item>
+      <list-item if="{{!hasEvents}}" class="empty-row" style="width: {{layout.width}}px; height: {{layout.emptyHeight}}px;">
+        <div class="empty" style="width: {{layout.contentWidth}}px;">
+          <image class="empty-icon" src="/common/calendar.png"></image>
+          <text class="empty-title" style="width: {{layout.contentWidth}}px;">{{emptyTitle}}</text>
+          <text class="empty-text" style="width: {{layout.contentWidth}}px;">{{emptyText}}</text>
+          <text class="empty-sync" if="{{!hasSnapshot}}" onclick="openSync">同步课表</text>
+        </div>
+      </list-item>
+      <list-item class="list-footer" style="width: {{layout.width}}px; height: {{layout.footerHeight}}px;">
+        <text class="footer-text" style="width: {{layout.contentWidth}}px;" onclick="openSync">{{syncText}}</text>
+      </list-item>
+    </list>
+  </div>
+  <div class="sync-screen" if="{{showSync}}" style="width: {{layout.width}}px; height: {{layout.height}}px;">
+    <div class="sync-heading" style="width: {{layout.syncHeadingWidth}}px; margin-top: {{layout.topInset}}px;">
+      <div class="back-button" onclick="closeSync">
+        <image class="back-icon" src="/common/back.png"></image>
+      </div>
+      <text class="sync-title" style="width: {{layout.syncTitleWidth}}px;">课表同步</text>
+    </div>
+    <list class="sync-list" id="sync-content" style="width: {{layout.width}}px; height: {{layout.syncBodyHeight}}px;">
+      <list-item class="sync-row" style="width: {{layout.width}}px; height: {{layout.syncIconSize + 184 + savedTitleHeight + (hasSnapshot ? savedRangeHeight : 0)}}px;">
+        <div class="sync-content" style="width: {{layout.width}}px; height: {{layout.syncIconSize + 184 + savedTitleHeight + (hasSnapshot ? savedRangeHeight : 0)}}px;">
+          <image class="sync-large-icon" src="/common/watch.png" style="width: {{layout.syncIconSize}}px; height: {{layout.syncIconSize}}px;"></image>
+          <text class="sync-state" style="width: {{layout.contentWidth}}px;">{{syncState}}</text>
+          <text class="sync-detail" style="width: {{layout.contentWidth}}px;">{{syncDetail}}</text>
+          <text class="saved-title" style="width: {{layout.contentWidth}}px; height: {{savedTitleHeight}}px;">{{timetableName}}</text>
+          <text class="saved-range" if="{{hasSnapshot}}" style="width: {{layout.contentWidth}}px; height: {{savedRangeHeight}}px;">{{campus}} {{rangeText}}</text>
+          <text class="saved-time" style="width: {{layout.contentWidth}}px;">{{syncText}}</text>
+          <input class="sync-action" type="button" value="{{syncBusy ? '同步中' : '同步课表'}}" style="width: {{layout.syncButtonWidth}}px;" onclick="requestSync"></input>
+        </div>
+      </list-item>
+      <list-item class="sync-footer" style="width: {{layout.width}}px; height: {{layout.syncBottomInset}}px;"></list-item>
+    </list>
+  </div>
+</div>

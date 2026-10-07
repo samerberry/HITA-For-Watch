@@ -1,0 +1,29 @@
+{
+  "app": {
+    "bundleName": "cn.berry.hita.watch",
+    "vendor": "HITA",
+    "version": {"code": 100000, "name": "0.1.0"},
+    "apiVersion": {"compatible": 23, "target": 23, "releaseType": "Release"}
+  },
+  "deviceConfig": {},
+  "module": {
+    "deviceType": ["liteWearable"],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry"
+    },
+    "abilities": [
+      {
+        "name": ".MainAbility",
+        "srcLanguage": "js",
+        "srcPath": "MainAbility",
+        "icon": "$media:app_icon",
+        "description": "$string:app_description",
+        "label": "$string:app_name",
+        "type": "page"
+      }
+    ],
+    "js": [{"name": ".MainAbility", "pages": ["pages/index/index"]}]
+  }
+}

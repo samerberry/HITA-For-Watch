@@ -1,0 +1,89 @@
+.screen {
+  width: 466px;
+  height: 466px;
+  background-color: #000000;
+  flex-direction: column;
+  align-items: center;
+}
+.schedule {
+  width: 466px;
+  height: 466px;
+  flex-direction: column;
+  align-items: center;
+}
+.top-line {
+  width: 254px;
+  height: 40px;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.heading { color: #F5F7FA; font-size: 20px; width: 105px; height: 28px; }
+.week-label { color: #A4ADB9; font-size: 18px; width: 85px; height: 26px; text-align: center; }
+.sync-icon-button { width: 44px; height: 40px; align-items: center; justify-content: center; }
+.sync-icon { width: 23px; height: 23px; }
+.week-strip {
+  width: 322px;
+  height: 70px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.day {
+  width: 44px;
+  height: 64px;
+  margin-left: 1px;
+  margin-right: 1px;
+  border-radius: 22px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #14171B;
+}
+.day-name { width: 40px; height: 22px; font-size: 17px; color: #AEB8C5; text-align: center; }
+.day-number { width: 40px; height: 30px; font-size: 24px; color: #FFFFFF; text-align: center; }
+.day-dot { width: 4px; height: 4px; margin-top: 2px; border-radius: 2px; background-color: transparent; }
+.day-summary { width: 302px; height: 32px; justify-content: space-between; align-items: center; }
+.summary-text { width: 240px; height: 26px; font-size: 18px; color: #ABB3BF; }
+.today-action { width: 54px; height: 28px; font-size: 18px; text-align: right; color: #B6D5FF; }
+.course-list { width: 466px; height: 300px; flex-direction: column; }
+.course-row { width: 466px; flex-direction: column; align-items: center; padding-bottom: 10px; }
+.course {
+  width: 322px;
+  padding: 14px;
+  border-radius: 8px;
+  background-color: #181C21;
+  flex-direction: column;
+}
+.course-top { width: 294px; height: 32px; flex-direction: row; align-items: center; }
+.course-dot { width: 6px; height: 6px; border-radius: 3px; margin-right: 8px; }
+.course-time { width: 276px; height: 28px; font-size: 23px; color: #E4EBF5; }
+.course-title { width: 294px; margin-top: 4px; margin-bottom: 10px; font-size: 27px; color: #FFFFFF; }
+.course-room { width: 294px; font-size: 22px; color: #EBEFF5; }
+.course-teacher { width: 294px; margin-top: 3px; font-size: 22px; color: #BCC5D0; }
+.course-bottom { width: 294px; height: 30px; margin-top: 8px; justify-content: space-between; align-items: center; }
+.course-kind { width: 180px; height: 25px; font-size: 17px; color: #A8B4C3; }
+.course-state { width: 114px; height: 25px; font-size: 17px; color: #A5D5BA; text-align: right; }
+.empty-row { width: 466px; height: 216px; align-items: center; justify-content: center; }
+.empty { width: 314px; height: 204px; flex-direction: column; align-items: center; justify-content: center; }
+.empty-icon { width: 44px; height: 44px; margin-bottom: 14px; }
+.empty-title { width: 310px; height: 38px; font-size: 27px; text-align: center; color: #F1F5FA; }
+.empty-text { width: 310px; height: 52px; font-size: 20px; text-align: center; color: #AAB4C2; }
+.empty-sync { width: 200px; height: 40px; font-size: 23px; text-align: center; color: #B6D5FF; }
+.list-footer { width: 466px; height: 108px; justify-content: center; }
+.footer-text { width: 286px; height: 36px; font-size: 17px; text-align: center; color: #858F9D; }
+.sync-screen { width: 466px; height: 466px; flex-direction: column; align-items: center; }
+.sync-list { flex-direction: column; }
+.sync-row { flex-direction: column; }
+.sync-content { flex-direction: column; align-items: center; }
+.sync-heading { width: 256px; height: 50px; margin-top: 28px; flex-direction: row; align-items: center; }
+.back-button { width: 48px; height: 48px; align-items: center; justify-content: center; }
+.back-icon { width: 28px; height: 28px; }
+.sync-title { width: 170px; height: 36px; font-size: 27px; color: #FFFFFF; text-align: center; }
+.sync-large-icon { width: 44px; height: 44px; margin-top: 4px; margin-bottom: 4px; }
+.sync-state { width: 320px; height: 40px; font-size: 27px; text-align: center; color: #F3F7FD; }
+.sync-detail { width: 324px; height: 48px; font-size: 20px; text-align: center; color: #A8B6C8; }
+.saved-title { width: 320px; height: 28px; font-size: 20px; color: #D3DCE7; text-align: center; }
+.saved-range { width: 300px; height: 27px; font-size: 18px; color: #A4AFBE; text-align: center; }
+.saved-time { width: 300px; height: 26px; font-size: 17px; color: #A4AFBE; text-align: center; }
+.sync-action { width: 222px; height: 50px; margin-top: 12px; border-radius: 25px; background-color: #B6D5FF; color: #10233C; font-size: 24px; }

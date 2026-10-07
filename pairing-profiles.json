@@ -1,0 +1,11 @@
+{
+  "activePlatform": "harmonyos",
+  "android": {
+    "packageName": "cn.limpu.hita",
+    "fingerprint": ""
+  },
+  "harmonyos": {
+    "packageName": "",
+    "fingerprint": ""
+  }
+}
